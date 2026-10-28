@@ -47,7 +47,7 @@ uv run pasta
 Or, for a handful of companies of your own (a quick first run):
 
 ```bash
-printf "TCS\nHDFCBANK\nRELIANCE\n" > ~/symbols.txt
+printf "SYMBOL1\nSYMBOL2\nSYMBOL3\n" > ~/symbols.txt   # NSE symbols of your choice
 uv run pasta --data ~/pasta-data run --universe file:$HOME/symbols.txt --from 2023-03-31
 uv run pasta --data ~/pasta-data as-of 2025-06-30
 ```

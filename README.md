@@ -118,7 +118,9 @@ uv run ruff format --check . && uv run ruff check .
 CI (`.github/workflows/ci.yml`) runs on every push to `main` and every pull request:
 `ruff format --check`, `ruff check` (including a complexity limit of 10 per function), and
 `pytest` on Python 3.12 and 3.13 on Linux and 3.13 on Windows. The tests use no network: they
-read small trimmed copies of real NSE and screener.in answers in `tests/fixtures/`.
+read small fixtures in `tests/fixtures/`: NSE and screener.in answers in their real shape
+(keys, XBRL taxonomies, contexts, units), trimmed, with every name, code and figure invented.
+The repository holds no company's data.
 
 ## License
 

@@ -42,4 +42,4 @@ A data folder `D`, a `SYMBOL` and a quarter end (`YYYY-MM-DD`).
 5. Report: the row's values, the PDF's values, each difference and its likely cause
    (unit, basis, wrong context, a restatement in a later version, screener.in rounding or
    minority interest). Quote the PDF line you read. Do not edit `out/` or `raw/`: a wrong
-   parse is a code fix with a test on a trimmed fixture (`scripts/trim_fixture.py`).
+   parse is a code fix with a test on a trimmed, anonymised fixture (`scripts/trim_fixture.py`).

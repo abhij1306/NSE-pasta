@@ -1,10 +1,12 @@
-"""Trim a real NSE XBRL document to the facts pasta reads, for a test fixture.
+"""Trim an NSE XBRL document to the facts pasta reads, the first step of a test fixture.
 
     uv run python scripts/trim_fixture.py IN.xml OUT.xml
 
 Keeps the XML declaration, the root element (its namespaces), the schemaRef, the `OneD` and
 `FourD` contexts, every unit, and the facts in those contexts that the parser reads, one element
-a line. The output is still the company's own figures, only fewer of them.
+a line. The output still holds the company's identifiers and figures: before committing it,
+replace every name, symbol, code and figure with invented ones (keeping the structure and the
+relationships the test needs). The repository holds no company's data.
 """
 
 from __future__ import annotations

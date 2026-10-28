@@ -7,20 +7,20 @@ from nse_pasta import universe
 
 def test_index_and_equity_lists(fixture):
     index = universe.parse_index_list(fixture("ind_nifty50list.csv"))
-    assert index[0] == universe.Company("ADANIENT", "INE423A01024", "Adani Enterprises Ltd.")
+    assert index[0] == universe.Company("ABC", "INE000A01011", "ABC Ltd.")
     every = universe.parse_equity_list(fixture("EQUITY_L.csv"))
-    assert every[0].symbol == "20MICRONS" and every[0].isin == "INE144J01027"
+    assert every[0].symbol == "ABC" and every[0].isin == "INE000A01011"
     with pytest.raises(universe.UniverseError):
         universe.parse_index_list(b"<html>blocked</html>")
 
 
 def test_symbol_file():
-    assert [c.symbol for c in universe.parse_symbol_file("tcs\n# a comment\n\nINFY # IT\n")] == [
-        "TCS",
-        "INFY",
+    assert [c.symbol for c in universe.parse_symbol_file("abc\n# a comment\n\nXYZ # autos\n")] == [
+        "ABC",
+        "XYZ",
     ]
-    rows = universe.parse_symbol_file("name,symbol,isin\nTata,TCS,INE467B01029\n")
-    assert rows == [universe.Company("TCS", "INE467B01029")]
+    rows = universe.parse_symbol_file("name,symbol,isin\nABC Ltd,ABC,INE000A01011\n")
+    assert rows == [universe.Company("ABC", "INE000A01011")]
 
 
 def test_spec():

@@ -51,13 +51,13 @@ pasta --data ~/pasta-data doctor
 sources (default settings, no pasta.toml):
   index list           ok              https://nsearchives.nseindia.com/content/indices/ind_nifty50list.csv
   equity list          ok              https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv
-  reg33 listing        ok              https://www.nseindia.com/api/corporates-financial-results?index=equities&symbol=RELIANCE&period=Quarterly
+  reg33 listing        ok              https://www.nseindia.com/api/corporates-financial-results?index=equities&symbol=<SYMBOL>&period=Quarterly
   integrated listing   ok              https://www.nseindia.com/api/integrated-filing-results?...
   insurance listing    ok              ...
   announcements        ok              ...
   xbrl document        ok              https://nsearchives.nseindia.com/corporate/xbrl/INTEGRATED_FILING_INDAS_..._WEB.xml
   screener robots.txt  ok              https://www.screener.in/robots.txt
-  screener page        ok              https://www.screener.in/company/RELIANCE/consolidated/
+  screener page        ok              https://www.screener.in/company/<SYMBOL>/consolidated/
 ```
 
 | Status | Meaning | What to do |
@@ -67,7 +67,8 @@ sources (default settings, no pasta.toml):
 | `blocked` | No answer after retries, an HTTP error, or a web page instead of data | Try later, or raise `[network] interval` (`[screener] interval`) |
 | `format_changed` | Data, but not in a format pasta reads | The parser needs a code change: open an issue with the URL. Until then `parse` keeps working on what is cached |
 
-The exit code is 1 when any source is not `ok`. When the screener.in robots.txt stops allowing
+`<SYMBOL>` is the first company of NSE's NIFTY 50 list, read by the first probe. The exit code
+is 1 when any source is not `ok`. When the screener.in robots.txt stops allowing
 company pages, pasta stops asking for them: that is by design.
 
 ## Settings: `pasta.toml`

@@ -19,7 +19,7 @@ def test_name_stamp_time_is_never_used():
 
 
 def test_a_rebroadcast_listing_time_is_not_the_filing_time():
-    # RELIANCE Mar 2019: listed 06-May-2019, the file name says 19-Apr-2019
+    # listed 06-May-2019, but the file name says it was filed 19-Apr-2019
     filing = _filing(
         broadcast_at=datetime(2019, 5, 6, 10, 0, tzinfo=IST),
         xbrl_url="https://x/INDAS_1_2_19042019053000.xml",
@@ -54,12 +54,12 @@ def test_announcement_read_12_hours_early():
 
 
 def test_a_bare_board_outcome_dates_the_integrated_q4(fixture):
-    # TCS Mar 2025: the outcome says only "Outcome of Board Meeting held on April 10, 2025"
+    # the outcome says only "Outcome of Board Meeting held on April 10, 2025"
     items = timing.results_announcements(
-        nse.parse_announcements(fixture("announcements_tcs_2025-04.json"))
+        nse.parse_announcements(fixture("announcements_2025-04.json"))
     )
     found = timing.match_announcement(items, date(2025, 4, 11), date(2025, 3, 31))
-    assert found.at == datetime(2025, 4, 10, 16, 5, 24, tzinfo=IST)
+    assert found.at == datetime(2025, 4, 10, 17, 45, 10, tzinfo=IST)
     # ... but not when the filing is two days later
     assert timing.match_announcement(items, date(2025, 4, 12), date(2025, 3, 31)) is None
 
@@ -81,6 +81,6 @@ def test_deadline():
 
 def test_quarter_announcement_ignores_bare_outcomes(fixture):
     items = timing.results_announcements(
-        nse.parse_announcements(fixture("announcements_tcs_2025-04.json"))
+        nse.parse_announcements(fixture("announcements_2025-04.json"))
     )
     assert timing.quarter_announcement(items, date(2025, 3, 31), set()) is None
