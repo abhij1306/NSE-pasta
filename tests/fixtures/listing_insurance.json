@@ -1,0 +1,36 @@
+[
+ {
+  "audited": "Un-Audited",
+  "broadCastDate": "07-Feb-2025 17:12:33",
+  "companyName": "Life Insurance Corporation Of India",
+  "consolidated": "Consolidated",
+  "cumulative": "Non-cumulative",
+  "difference": "00:00:21",
+  "exchdisstime": "07-Feb-2025 17:12:54",
+  "insuranceType": "Life-Insurance",
+  "ixbrl": "https://nsearchives.nseindia.com/corporate/ixbrl/LI_119072_07022025171233_iXBRL_WEB.html",
+  "naAttach": "https://nsearchives.nseindia.com/na_attachments/LICI_NA_07022025171233_1.zip",
+  "period": "Quarterly",
+  "periodEnd": "31-Dec-2024",
+  "relatingTo": "Third Quarter",
+  "symbol": "LICI",
+  "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/LI_119072_1374582_07022025051233.xml"
+ },
+ {
+  "audited": "Un-Audited",
+  "broadCastDate": "07-Feb-2025 17:08:38",
+  "companyName": "Life Insurance Corporation Of India",
+  "consolidated": "Non-Consolidated",
+  "cumulative": "Non-cumulative",
+  "difference": "00:01:06",
+  "exchdisstime": "07-Feb-2025 17:09:44",
+  "insuranceType": "Life-Insurance",
+  "ixbrl": "https://nsearchives.nseindia.com/corporate/ixbrl/LI_119070_07022025170837_iXBRL_WEB.html",
+  "naAttach": "https://nsearchives.nseindia.com/na_attachments/LICI_NA_07022025170837_1.zip",
+  "period": "Quarterly",
+  "periodEnd": "31-Dec-2024",
+  "relatingTo": "Third Quarter",
+  "symbol": "LICI",
+  "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/LI_119070_1374569_07022025050837.xml"
+ }
+]

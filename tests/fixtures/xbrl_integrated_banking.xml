@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:in-capmkt="http://www.sebi.gov.in/xbrl/2026-01-31/in-capmkt" xmlns:in-capmkt-ent="http://www.sebi.gov.in/xbrl/IntegratedFinance_Banking/2026-01-31/in-capmkt/in-capmkt-ent" xmlns:in-capmkt-roles="http://www.sebi.gov.in/xbrl/IntegratedFinance_Banking/2026-01-31/in-capmkt-roles" xmlns:in-capmkt-types="http://www.sebi.gov.in/xbrl/2026-01-31/in-capmkt-types" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:negated="http://www.xbrl.org/2009/role/negated" xmlns:net="http://www.xbrl.org/2009/role/net" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xlink="http://www.w3.org/1999/xlink">
+<link:schemaRef xlink:href="in-capmkt-ent-2026-01-31.xsd" xlink:type="simple"/>
+<xbrli:context id="OneD"><xbrli:entity><xbrli:identifier scheme="http://www.sebi.gov.in/in-capmkt/ScripCode">500180</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2026-07-01</xbrli:startDate><xbrli:endDate>2026-09-30</xbrli:endDate></xbrli:period></xbrli:context>
+<xbrli:context id="FourD"><xbrli:entity><xbrli:identifier scheme="http://www.sebi.gov.in/in-capmkt/ScripCode">500180</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2026-04-01</xbrli:startDate><xbrli:endDate>2026-09-30</xbrli:endDate></xbrli:period></xbrli:context>
+<xbrli:unit id="INR"><xbrli:measure>iso4217:INR</xbrli:measure></xbrli:unit>
+<xbrli:unit id="pure"><xbrli:measure>xbrli:pure</xbrli:measure></xbrli:unit>
+<xbrli:unit id="INRPerShare"><xbrli:divide><xbrli:unitNumerator><xbrli:measure>iso4217:INR</xbrli:measure></xbrli:unitNumerator><xbrli:unitDenominator><xbrli:measure>xbrli:shares</xbrli:measure></xbrli:unitDenominator></xbrli:divide></xbrli:unit>
+<in-capmkt:DateOfStartOfFinancialYear contextRef="OneD">2026-04-01</in-capmkt:DateOfStartOfFinancialYear>
+<in-capmkt:DateOfEndOfFinancialYear contextRef="OneD">2027-03-31</in-capmkt:DateOfEndOfFinancialYear>
+<in-capmkt:DateOfStartOfReportingPeriod contextRef="OneD">2026-07-01</in-capmkt:DateOfStartOfReportingPeriod>
+<in-capmkt:DateOfEndOfReportingPeriod contextRef="OneD">2026-09-30</in-capmkt:DateOfEndOfReportingPeriod>
+<in-capmkt:NatureOfReportStandaloneConsolidated contextRef="OneD">Consolidated</in-capmkt:NatureOfReportStandaloneConsolidated>
+<in-capmkt:InterestEarned contextRef="OneD" decimals="-5" unitRef="INR">951316300000</in-capmkt:InterestEarned>
+<in-capmkt:Income contextRef="OneD" decimals="-5" unitRef="INR">1293586900000</in-capmkt:Income>
+<in-capmkt:ProfitLossForThePeriod contextRef="OneD" decimals="-5" unitRef="INR">207000300000</in-capmkt:ProfitLossForThePeriod>
+<in-capmkt:ProfitLossAfterTaxesMinorityInterestAndShareOfProfitLossOfAssociates contextRef="OneD" decimals="-5" unitRef="INR">207000300000</in-capmkt:ProfitLossAfterTaxesMinorityInterestAndShareOfProfitLossOfAssociates>
+<in-capmkt:BasicEarningsPerShareAfterExtraordinaryItems contextRef="OneD" decimals="INF" unitRef="INRPerShare">13.43</in-capmkt:BasicEarningsPerShareAfterExtraordinaryItems>
+<in-capmkt:DilutedEarningsPerShareAfterExtraordinaryItems contextRef="OneD" decimals="INF" unitRef="INRPerShare">13.41</in-capmkt:DilutedEarningsPerShareAfterExtraordinaryItems>
+<in-capmkt:DateOfStartOfReportingPeriod contextRef="FourD">2026-04-01</in-capmkt:DateOfStartOfReportingPeriod>
+<in-capmkt:DateOfEndOfReportingPeriod contextRef="FourD">2026-09-30</in-capmkt:DateOfEndOfReportingPeriod>
+<in-capmkt:NatureOfReportStandaloneConsolidated contextRef="FourD">Consolidated</in-capmkt:NatureOfReportStandaloneConsolidated>
+<in-capmkt:InterestEarned contextRef="FourD" decimals="-5" unitRef="INR">1857069600000</in-capmkt:InterestEarned>
+<in-capmkt:Income contextRef="FourD" decimals="-5" unitRef="INR">2624690500000</in-capmkt:Income>
+<in-capmkt:ProfitLossForThePeriod contextRef="FourD" decimals="-5" unitRef="INR">399447400000</in-capmkt:ProfitLossForThePeriod>
+<in-capmkt:ProfitLossAfterTaxesMinorityInterestAndShareOfProfitLossOfAssociates contextRef="FourD" decimals="-5" unitRef="INR">399447400000</in-capmkt:ProfitLossAfterTaxesMinorityInterestAndShareOfProfitLossOfAssociates>
+<in-capmkt:BasicEarningsPerShareAfterExtraordinaryItems contextRef="FourD" decimals="INF" unitRef="INRPerShare">25.93</in-capmkt:BasicEarningsPerShareAfterExtraordinaryItems>
+<in-capmkt:DilutedEarningsPerShareAfterExtraordinaryItems contextRef="FourD" decimals="INF" unitRef="INRPerShare">25.87</in-capmkt:DilutedEarningsPerShareAfterExtraordinaryItems>
+</xbrli:xbrl>

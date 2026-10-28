@@ -1,0 +1,42 @@
+[project]
+name = "nse-pasta"
+version = "0.1.0"
+description = "Build and keep current a point-in-time dataset of Indian listed companies' quarterly results from NSE (and screener.in)"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.27",
+    "pyarrow>=16",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-timeout>=2.3", "ruff>=0.6"]
+
+[project.scripts]
+pasta = "nse_pasta.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nse_pasta"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM", "RUF", "C90"]
+ignore = ["S101", "S608", "RUF001", "RUF002", "RUF003", "SIM905"]
+
+# New code stays at or under 10.
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+timeout = 60
+addopts = "--durations=10"
