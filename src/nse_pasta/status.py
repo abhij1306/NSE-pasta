@@ -66,12 +66,12 @@ def describe(st: Status) -> list[str]:
     if st.empty:
         return ["  empty: start with 'Run everything'"]
     lines = [
-        f"  universe          {st.universe_spec or 'not chosen'} ({st.companies} companies)",
-        *(f"  {kind:<17} {count}" for kind, count in st.nse_answers.items()),
-        f"  screener pages    {st.screener_pages}",
-        f"  last fetch        {st.last_fetch:%Y-%m-%d %H:%M} UTC" if st.last_fetch else "",
+        f"  universe             {st.universe_spec or 'not chosen'} ({st.companies} companies)",
+        *(f"  {kind:<20} {count}" for kind, count in st.nse_answers.items()),
+        f"  screener pages       {st.screener_pages}",
+        f"  last fetch           {st.last_fetch:%Y-%m-%d %H:%M} UTC" if st.last_fetch else "",
     ]
-    lines += [f"  out/{name:<13} {rows} rows" for name, rows in st.outputs.items()]
+    lines += [f"  out/{name:<16} {rows} rows" for name, rows in st.outputs.items()]
     if not st.outputs:
-        lines.append("  outputs           none yet (run parse and build)")
+        lines.append("  outputs              none yet (run parse and build)")
     return [line for line in lines if line]

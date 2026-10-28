@@ -234,9 +234,32 @@ def figures(context: dict[str, Fact], kind: str, basis: str) -> Figures:
         revenue,
         _first(context, INCOME_TAGS, MONEY_UNIT),
         profit,
-        _first(context, BASIC_EPS_TAGS, EPS_UNIT),
-        _first(context, DILUTED_EPS_TAGS, EPS_UNIT),
+        _eps(context, "Basic", BASIC_EPS_TAGS),
+        _eps(context, "Diluted", DILUTED_EPS_TAGS),
     )
+
+
+def _copied_parts(context: dict[str, Fact], kind: str) -> Decimal | None:
+    """The continuing-operations EPS when the document copied it into the discontinued field
+    (both equal, non-zero, and the total their sum: MARUTI's Mar 2024 filing reads 125.71 +
+    125.71 = 251.42), else None."""
+    stem = f"{kind}EarningsLossPerShareFrom"
+    total = _number(context.get(stem + "ContinuingAndDiscontinuedOperations"), EPS_UNIT)
+    cont = _number(context.get(stem + "ContinuingOperations"), EPS_UNIT)
+    disc = _number(context.get(stem + "DiscontinuedOperations"), EPS_UNIT)
+    if None in (total, cont, disc) or cont == 0 or cont != disc or total != cont + disc:
+        return None
+    return cont
+
+
+def _eps(context: dict[str, Fact], kind: str, tags: tuple[str, ...]) -> Decimal | None:
+    copied = _copied_parts(context, kind)
+    return copied if copied is not None else _first(context, tags, EPS_UNIT)
+
+
+def eps_corrected(context: dict[str, Fact]) -> bool:
+    """Whether `figures` replaced the context's basic EPS total (`_copied_parts`)."""
+    return _copied_parts(context, "Basic") is not None
 
 
 # --- the document ---------------------------------------------------------------------------
@@ -254,6 +277,7 @@ class Parsed:
     annual: Figures | None  # a Q4 document with only the year: the year's figures
     nine_month: Figures | None  # ... and nine months, when the document carries them
     fy_start: date | None
+    eps_corrected: bool = False  # the quarter's EPS total was a filing error (`_copied_parts`)
 
 
 def quarter_start(end: date) -> date:
@@ -325,7 +349,9 @@ def parse(body: bytes) -> Parsed:
             kind, basis, q_start, end, None, fy_start or start, quarter, quarter, nine, fy_start
         )
     q_start = start or quarter_start(end)
-    return Parsed(kind, basis, q_start, end, quarter, ytd_start, ytd, None, None, fy_start)
+    return Parsed(
+        kind, basis, q_start, end, quarter, ytd_start, ytd, None, None, fy_start, eps_corrected(one)
+    )
 
 
 def _annual_only(

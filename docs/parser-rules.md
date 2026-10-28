@@ -58,6 +58,12 @@ differs from the listing's, the document's is kept, `period_mismatch` is true an
 
 Every Reg 33 and Integrated variant maps into these same columns.
 
+**A copied EPS is corrected.** When a document gives continuing and discontinued EPS that are
+equal and non-zero, and its "continuing and discontinued" total is exactly their sum, the
+discontinued figure is a copy of the continuing one (MARUTI's Mar 2024 filing: 125.71 + 125.71
+= 251.42, with no discontinued operations). The continuing EPS is used, basic and diluted, and
+`eps_corrected` is true.
+
 ## 6. Units
 
 Money facts must carry the unit `iso4217:INR` and EPS `iso4217:INR / xbrli:shares`, as the

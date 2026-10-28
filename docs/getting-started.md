@@ -64,15 +64,17 @@ with `--source both`), parses everything into `out/results`, and builds `out/gro
 known at the end of 30 June 2025. Every command: [cli](cli.md). Every column:
 [schema](schema.md).
 
-**Time.** At one request every 2 seconds, NSE costs about **50 requests per company for three
-and a half years** of quarters (two listings, one document and one announcement window per
-quarter), so about 1.7 minutes per company: about 1.5 hours for the NIFTY 50 from 2023, and
-roughly a day for the NIFTY 500 from 2020. screener.in adds one or two pages per company at one
-every 3 seconds. `--basis both` reads the standalone documents too (about 1.5x). Everything is
-resumable: stop it any time and run the same command again.
+**Time.** At one request every 2 seconds, NSE costs about **32 requests per company for three
+and a half years** of quarters (two listings, then per quarter one document and one
+announcement window under `consolidated-first`), so about a minute per company: a sample of 8
+NIFTY 50 companies from the March 2023 quarter took 259 requests and about 9 minutes. That is
+about an hour for the NIFTY 50 from 2023 and about half a day for the NIFTY 500 from 2020.
+screener.in adds one or two pages per company at one every 3 seconds. `--basis both` reads the
+standalone documents too (about 1.5x). Everything is resumable: stop it any time and run the
+same command again.
 
-**Disk.** About 150 KB per XBRL document compressed to a third: roughly 1 MB per company for
-three years with announcements, so tens of megabytes for the NIFTY 50.
+**Disk.** That 8-company sample holds 2.4 MB in `raw/` (gzipped) and 0.25 MB in `out/`: about
+0.3 MB per company for three and a half years, so tens of megabytes for the NIFTY 500.
 
 ## 4. Check that it worked
 

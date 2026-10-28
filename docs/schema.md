@@ -44,6 +44,7 @@ version.
 | `ytd_start` | First day of the year-to-date context (the financial year's start) |
 | `ytd_revenue`, `ytd_total_income`, `ytd_net_profit`, `ytd_eps_basic`, `ytd_eps_diluted` | The financial year to date as the document gives it (for a derived Q4: the year) |
 | `q4_derived` | Q4 = the year less nine months ([rule 7](parser-rules.md#7-q4-from-the-year)) |
+| `eps_corrected` | The filing's EPS total double-counted a copied discontinued EPS ([rule 5](parser-rules.md#5-tags)) |
 | `period_mismatch`, `listing_period_end` | The document's period end differs from the listing's (the listing's kept here) |
 | `public_at` | When the figures became public ([point in time](point-in-time.md#public_at)) |
 | `public_at_source` | `announcement`, `xbrl`, `xbrl_date`, `deadline`, `observed` |

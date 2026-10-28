@@ -77,3 +77,12 @@ def test_figures_minus_and_quarter_start():
     assert a.minus(b) == xbrl.Figures(Decimal(3), None, Decimal(1), Decimal("0.5"), None)
     assert xbrl.quarter_start(date(2025, 3, 31)) == date(2025, 1, 1)
     assert xbrl.quarter_start(date(2024, 12, 31)) == date(2024, 10, 1)
+
+
+def test_eps_copied_into_discontinued_is_corrected(fixture):
+    # MARUTI, Mar 2024: continuing 125.71, "discontinued" 125.71, total 251.42 as filed
+    parsed = xbrl.parse(fixture("xbrl_reg33_indas_eps_copied.xml"))
+    assert parsed.eps_corrected
+    assert parsed.quarter.eps_basic == parsed.quarter.eps_diluted == Decimal("125.71")
+    assert parsed.ytd.eps_basic == Decimal("429.01")
+    assert not xbrl.parse(fixture("xbrl_reg33_indas.xml")).eps_corrected
