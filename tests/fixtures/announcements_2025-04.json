@@ -1,0 +1,23 @@
+[
+ {
+  "symbol": "ABC",
+  "an_dt": "10-Apr-2025 18:30:05",
+  "desc": "Press Release",
+  "attchmntText": "ABC Limited has informed the Exchange regarding a press release.",
+  "sm_isin": "INE000A01011"
+ },
+ {
+  "symbol": "ABC",
+  "an_dt": "10-Apr-2025 17:52:41",
+  "desc": "Dividend",
+  "attchmntText": "ABC Limited has informed the Exchange that the Board of Directors at its meeting held on April 10, 2025, recommended a final dividend.",
+  "sm_isin": "INE000A01011"
+ },
+ {
+  "symbol": "ABC",
+  "an_dt": "10-Apr-2025 17:45:10",
+  "desc": "Outcome of Board Meeting",
+  "attchmntText": "ABC Limited has informed the Exchange regarding Outcome of Board Meeting held on April 10, 2025.",
+  "sm_isin": "INE000A01011"
+ }
+]

@@ -36,8 +36,8 @@ Total income and diluted EPS are not shown: those columns stay empty on screener
 
 ## How far back the public pages go
 
-**The latest 13 quarters.** Checked on 28 Oct 2026: TCS's consolidated page showed the quarters
-ending 2023-09-30 to 2026-09-30, and HDFCBANK's the same span. The annual table goes back about
+**The latest 13 quarters.** Checked on 28 Oct 2026 on a company's and a bank's consolidated
+pages: both showed the quarters ending 2023-09-30 to 2026-09-30. The annual table goes back about
 12 years, but pasta reads quarters only. So screener.in can fill gaps only in roughly the last
 three years, never backfill 2020 to 2022: for older quarters NSE is the only source.
 
@@ -50,9 +50,8 @@ three years, never backfill 2020 to 2022: for older quarters NSE is the only sou
   attributable to the owners of the parent. Expect differences for groups with large minority
   interests; `out/crosscheck.csv` shows them.
 - A bank's `Revenue` on screener.in is its interest earned, like pasta's NSE rows.
-- **EPS is restated for later bonuses and splits** on screener.in (HDFCBANK's Dec 2024 EPS shows
-  as 11.54 after its 2025 1:1 bonus; NSE's filing says 23.11). pasta's NSE rows keep EPS as
-  filed.
+- **EPS is restated for later bonuses and splits** on screener.in (after a 1:1 bonus, earlier
+  quarters show half the EPS the company filed). pasta's NSE rows keep EPS as filed.
 
 ## Rows
 

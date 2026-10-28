@@ -241,8 +241,8 @@ def figures(context: dict[str, Fact], kind: str, basis: str) -> Figures:
 
 def _copied_parts(context: dict[str, Fact], kind: str) -> Decimal | None:
     """The continuing-operations EPS when the document copied it into the discontinued field
-    (both equal, non-zero, and the total their sum: MARUTI's Mar 2024 filing reads 125.71 +
-    125.71 = 251.42), else None."""
+    (both equal, non-zero, and the total their sum, a filing error seen in a real Q4 document:
+    12.50 + 12.50 = 25.00 with no discontinued operations), else None."""
     stem = f"{kind}EarningsLossPerShareFrom"
     total = _number(context.get(stem + "ContinuingAndDiscontinuedOperations"), EPS_UNIT)
     cont = _number(context.get(stem + "ContinuingOperations"), EPS_UNIT)

@@ -1,0 +1,51 @@
+{
+ "data": [
+  {
+   "attFileSize": null,
+   "audited": "Audited",
+   "broadcast_Date": "11-Apr-2025 10:12:29",
+   "cmName": "ABC Limited",
+   "consolidated": "Consolidated",
+   "creation_Date": "11-Apr-2025 10:12:30",
+   "diff": "00:00:00",
+   "ixbrl": "https://nsearchives.nseindia.com/corporate/ixbrl/INTEGRATED_FILING_INDAS_4000002_11042025101230_iXBRL_WEB.html",
+   "ixbrlFileSize": null,
+   "pdf_attach": null,
+   "qe_Date": "31-MAR-2025",
+   "revised_Date": null,
+   "revision_Remark": null,
+   "seq_Id": "300002",
+   "smName": "ABC Limited",
+   "symbol": "ABC",
+   "type": "Integrated Filing- Financials",
+   "type_Sub": "Original",
+   "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INTEGRATED_FILING_INDAS_4000002_11042025101230_WEB.xml",
+   "xbrlFileSize": null
+  },
+  {
+   "attFileSize": null,
+   "audited": "Audited",
+   "broadcast_Date": "11-Apr-2025 09:58:03",
+   "cmName": "ABC Limited",
+   "consolidated": "Standalone",
+   "creation_Date": "11-Apr-2025 09:58:04",
+   "diff": "00:00:01",
+   "ixbrl": "https://nsearchives.nseindia.com/corporate/ixbrl/INTEGRATED_FILING_INDAS_4000001_11042025095804_iXBRL_WEB.html",
+   "ixbrlFileSize": null,
+   "pdf_attach": null,
+   "qe_Date": "31-MAR-2025",
+   "revised_Date": null,
+   "revision_Remark": null,
+   "seq_Id": "300001",
+   "smName": "ABC Limited",
+   "symbol": "ABC",
+   "type": "Integrated Filing- Financials",
+   "type_Sub": "Original",
+   "xbrl": "https://nsearchives.nseindia.com/corporate/xbrl/INTEGRATED_FILING_INDAS_4000001_11042025095804_WEB.xml",
+   "xbrlFileSize": null
+  }
+ ],
+ "size": 500,
+ "page": -1,
+ "totalCount": 2
+}

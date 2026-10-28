@@ -38,8 +38,8 @@ The rules, for version 1 of an NSE quarter:
   names a quarter end other than this one is skipped; one that names this quarter wins; else
   the earliest `Financial Result Updates`; else the earliest board outcome naming the results;
   else the earliest board outcome that names nothing at all ("Outcome of Board Meeting held on
-  April 10, 2025", TCS's March 2025 results) broadcast on the filing's own day or the day
-  before. That last rule is never used for screener.in rows, whose window is a whole quarter.
+  April 10, 2025", as several large companies announced their March 2025 results) broadcast on
+  the filing's own day or the day before. That last rule is never used for screener.in rows, whose window is a whole quarter.
 - `public_at` is the earlier of the announcement and `xbrl_at` (when that is known to the
   second).
 - **One company's announcement clock reads 12 hours early** (05:08 for an evening board meeting
@@ -57,8 +57,8 @@ When the XBRL was filed:
 - Integrated Filing: the listing's `creation_Date`.
 - Reg 33: the listing's `broadCastDate` when it falls on the date in the XBRL file name;
   otherwise the end of that date (`xbrl_at_estimated`). For 2017 to 2021 the listing time is
-  often a re-broadcast weeks later (RELIANCE Mar 2019: listed 06-May-2019, filed 19-Apr-2019,
-  announced 18-Apr-2019 18:15), so it is never used past the file name's date.
+  often a re-broadcast weeks later (one large company's Mar 2019 quarter: listed 06-May-2019,
+  filed 19-Apr-2019, announced 18-Apr-2019), so it is never used past the file name's date.
 - The file name's time is never read: it is a 12-hour clock without AM/PM.
 
 ## Versions
