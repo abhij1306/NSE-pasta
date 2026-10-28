@@ -1,0 +1,20 @@
+User-agent: *
+
+Disallow: /user/*
+Disallow: /*?q=
+Disallow: /*?*&q=
+Disallow: /*?sort=
+Disallow: /*?*&sort=
+Disallow: /*?limit=
+Disallow: /*?*&limit=
+Disallow: /*?page=
+Disallow: /*?*&page=
+Disallow: /screens/*?order=
+Disallow: /screens/*?*&order=
+Disallow: /screens/*?include_old=
+Disallow: /screens/*?*&include_old=
+Disallow: /company/source/quarter/*
+Disallow: /login/google/
+Disallow: /login/apple/
+
+Sitemap: https://www.screener.in/sitemap.xml

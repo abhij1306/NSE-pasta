@@ -1,0 +1,19 @@
+# Never commit data: everything a run produces lives in the data directory you pass (--data).
+data/
+*.csv
+*.tsv
+*.json
+*.parquet
+*.zip
+*.gz
+!.claude/**/*.md
+!tests/fixtures/**
+
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+dist/
+.env
+.claude/worktrees/
